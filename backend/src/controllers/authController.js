@@ -74,3 +74,34 @@ export const login = async (req, res) => {
     res.status(500).json({ error: "Server error" });
   }
 };
+
+
+export const forgetPassword = async (req, res) => {
+  const { email, newPassword } = req.body;
+
+  if (!email || !newPassword) {
+    return res.status(400).json({ error: "Email and new password are required" });
+  }
+
+  try {
+    // Find user
+    const user = await prisma.user.findUnique({ where: { email } });
+    if (!user) {
+      return res.status(400).json({ error: "Email not found" });
+    }
+
+    // Hash new password
+    const hashedPassword = await hashPassword(newPassword);
+
+    // Update password
+    await prisma.user.update({
+      where: { email },
+      data: { password: hashedPassword },
+    });
+
+    res.json({ message: "Password updated successfully" });
+  } catch (error) {
+    res.status(500).json({ error: "Server error from update password" });
+  }
+};
+

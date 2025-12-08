@@ -67,23 +67,26 @@ const [showPassword, setShowPassword] = useState(false);
         />
       </div>
 
-      {/* Password */}
+    {/* Password */}
 <div className="mb-3">
   <label className="form-label">Password</label>
-  <input
-    type={showPassword ? "text" : "password"}
-    className="form-control"
-    placeholder="••••••••"
-    value={form.password}
-    onChange={(e) => setForm({ ...form, password: e.target.value })}
-    required
-  />
-<label
-    className="password-toggle-icon"
-    onClick={() => setShowPassword(!showPassword)}
-  >
-    {showPassword ? <IoEyeOffOutline /> : <IoEyeOutline />}
-  </label>
+  <div className="input-group">
+    <input
+      type={showPassword ? "text" : "password"}
+      className="form-control"
+      placeholder="••••••••"
+      value={form.password}
+      onChange={(e) => setForm({ ...form, password: e.target.value })}
+      required
+    />
+    <span
+      className="input-group-text"
+      style={{ cursor: "pointer" }}
+      onClick={() => setShowPassword(!showPassword)}
+    >
+      {showPassword ? <IoEyeOffOutline /> : <IoEyeOutline />}
+    </span>
+  </div>
 </div>
 
     

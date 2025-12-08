@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import api from '../services/Api';
 import { toast } from 'react-toastify';
 import { useAuth } from '../context/AuthContext';
@@ -44,20 +44,30 @@ const [showPassword, setShowPassword] = useState(false);
       </div>
 <div className="mb-3">
   <label className="form-label">Password</label>
-  <input
-    type={showPassword ? "text" : "password"}
-    className="form-control"
-    placeholder="••••••••"
-    value={form.password}
-    onChange={(e) => setForm({ ...form, password: e.target.value })}
-    required
-  />
-<label
-    className="password-toggle-icon-login"
-    onClick={() => setShowPassword(!showPassword)}
-  >
-    {showPassword ? <IoEyeOffOutline /> : <IoEyeOutline />}
-  </label>
+  <div className="input-group">
+    <input
+      type={showPassword ? "text" : "password"}
+      className="form-control"
+      placeholder="••••••••"
+      value={form.password}
+      onChange={(e) => setForm({ ...form, password: e.target.value })}
+      required
+    />
+    <span
+      className="input-group-text"
+      style={{ cursor: "pointer" }}
+      onClick={() => setShowPassword(!showPassword)}
+    >
+      {showPassword ? <IoEyeOffOutline /> : <IoEyeOutline />}
+    </span>
+  </div>
+
+  {/* Forget password link */}
+  <div className="text-end mt-1">
+    <NavLink to="/forget-password" className="small text-decoration-none">
+      Forget password
+    </NavLink>
+  </div>
 </div>
 
  <button type="submit" className="btn btn-primary  btn-create w-100 ">

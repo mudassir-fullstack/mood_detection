@@ -8,7 +8,7 @@ import HomePage from './pages/Home';
 import MoodCheck from './pages/MoodCheck';
 import Insights from './pages/Insights';
 import Contact from './pages/Contact';
-
+import ForgetPassword from './pages/ForgetPassword';
 // Components
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
@@ -50,7 +50,7 @@ export default function App() {
     
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-
+        <Route path="/forget-password" element={<ForgetPassword />} />
         <Route element={<Layout />}>
 
           <Route path="/" element={<HomePage />} />

@@ -29,9 +29,10 @@ p { font-size: 1.1rem; }
   width: 40%;
   max-width: 600px;
 }
+
 .password-toggle-icon{
     position: absolute;
-    top: 62%;
+    top: 54%;
    left: 65%;
     transform: translateY(-50%);
     cursor: pointer;

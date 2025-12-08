@@ -3,9 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-directUrl = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DATABASE_URL")
 }
 
 model User {
@@ -15,27 +15,30 @@ model User {
   full_name   String?
   role        String      @default("user")
   created_at  DateTime    @default(now())
-  moodEntries MoodEntry[] 
+  moodEntries MoodEntry[]
 
   @@map("User")
 }
+
 model MoodEntry {
   id           String   @id @default(uuid())
   userId       String
   inputText    String
   detectedMood String
-  solutions    String?        // Only Grok JSON — no aiResponse
+  solutions    String?
   createdAt    DateTime @default(now())
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
   @@map("MoodEntry")
 }
 
 model Contact {
-  id String @id @default(uuid())
+  id        String   @id @default(uuid())
   full_name String
-  email String
-  subject String
-  message String
-createdAt DateTime @default(now())
-@@map("Contact")
+  email     String
+  subject   String
+  message   String
+  createdAt DateTime @default(now())
+
+  @@map("Contact")
 }
