@@ -20,7 +20,9 @@ app.use('/api', contactRoutes);
 app.get('/', (req, res) => {
   res.json({ message: "Mood Genius API Running!" });
 });
-
+app.get('/api/debug', (req, res) => {
+  res.json({ message: "Debug route works!" });
+});
 // const PORT = process.env.PORT || 5000;
 // app.listen(PORT, () => {
 //   console.log(`Server running on http://localhost:${PORT}`);
