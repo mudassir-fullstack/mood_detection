@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "src/index.js", "use": "@vercel/node" },
+    { "src": "prisma/schema.prisma", "use": "@vercel/prisma" }
+  ],
+  "env": {
+    "DATABASE_URL": "@database_url",
+    "JWT_SECRET": "@jwt_secret",
+    "HUGGINGFACE_API_KEY": "@huggingface_api_key",
+    "MAIL_USER": "@mail_user",
+    "MAIL_PASS": "@mail_pass",
+    "MAIL_TO": "@mail_to",
+    "OPENROUTER_API_KEY": "@openrouter_api_key"
+  }
+}
