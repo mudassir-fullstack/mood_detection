@@ -104,3 +104,20 @@ export const forgetPassword = async (req, res) => {
   }
 };
 
+export const getAuthUser = async (req, res) => {
+  try {
+    const users = await prisma.user.findMany();
+
+    res.status(200).json({
+      success: true,
+      message: "Users fetched successfully",
+      users,
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      success: false,
+      error: err.message,
+    });
+  }
+};
