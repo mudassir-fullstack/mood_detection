@@ -1,5 +1,4 @@
-import { PrismaClient } from '@prisma/client';
-const prisma = new PrismaClient();
+import prisma from '../prismaClient.js';
 
 const detectMood = async (text) => {
   const MODEL = "j-hartmann/emotion-english-distilroberta-base"; 
