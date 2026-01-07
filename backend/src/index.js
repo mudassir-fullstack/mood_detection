@@ -10,7 +10,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: "*",
+  origin: "https://moodgenius-app.vercel.app",
   credentials: true
 }));
 
