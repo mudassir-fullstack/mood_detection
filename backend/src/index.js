@@ -12,11 +12,6 @@ app.use(cors({
   origin: "https://moodgenius-app.vercel.app",
   credentials: true,
 }));
-app.options("*", cors({
-  origin: "https://moodgenius-app.vercel.app",
-  credentials: true,
-}));
-
 app.use(express.json());
 
 // Routes
