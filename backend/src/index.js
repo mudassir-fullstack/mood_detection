@@ -8,12 +8,19 @@ import contactRoutes from './routes/contactRoutes.js';
 dotenv.config();
 const app = express();
 
+
+const allowedOrigin = "https://moodgenius-app.vercel.app";
+
+app.use(express.json());
+
+// Global CORS
 app.use(cors({
-  origin: "https://moodgenius-app.vercel.app",
+  origin: allowedOrigin,
   credentials: true,
-  methods: ["GET","POST","PUT","DELETE","OPTIONS"],
-  allowedHeaders: ["Content-Type","Authorization"]
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
 
 // Middleware
 app.use(express.json());
