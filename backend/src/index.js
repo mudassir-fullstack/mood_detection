@@ -23,6 +23,13 @@ app.use('/api/auth', authRoutes);
 app.use('/api/mood', moodRoutes);
 app.use('/api', contactRoutes);
 
+
+app.use((req, res, next) => {
+  console.log(`Incoming request: ${req.method} ${req.url}`);
+  console.log("Origin header:", req.headers.origin);
+  next();
+});
+
 // Test route
 app.get('/', (req, res) => {
   res.json({ message: "Mood Genius API Running!" });
