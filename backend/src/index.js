@@ -10,7 +10,7 @@ const allowedOrigin = "https://moodgenius-app.vercel.app";
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Global CORS headers for all routes
+// Serverless-safe CORS middleware
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
   res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -20,13 +20,11 @@ app.use((req, res, next) => {
 });
 
 // Preflight handler
-app.options('*', (req, res) => {
-  res.sendStatus(204); // explicit response for OPTIONS
-});
+app.options('*', (req, res) => res.sendStatus(204));
 
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/mood', moodRoutes);
 app.use('/api', contactRoutes);
 
-export default app; // Vercel serverless
+export default app; // ✅ serverless safe
