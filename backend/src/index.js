@@ -9,7 +9,6 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-<<<<<<< HEAD
   origin: "https://moodgenius-app.vercel.app",
   credentials: true
 }));
@@ -17,9 +16,7 @@ app.use(cors({
 app.options('*', cors({
   origin: "https://moodgenius-app.vercel.app",
   credentials: true
-=======
   origin: "*",
->>>>>>> a9ec731cb110117eb0fb0c0e1cfea806379d13ce
 }));
 app.use(express.json());
 
@@ -43,11 +40,6 @@ app.get("/test-db", async (req, res) => {
   }
 });
 
-
-// const PORT = process.env.PORT || 5000;
-// app.listen(PORT, () => {
-//   console.log(`Server running on http://localhost:${PORT}`);
-// });
 
 export default app;
 
