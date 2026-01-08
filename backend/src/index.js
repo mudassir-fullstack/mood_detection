@@ -9,6 +9,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
+<<<<<<< HEAD
   origin: "https://moodgenius-app.vercel.app",
   credentials: true
 }));
@@ -16,8 +17,10 @@ app.use(cors({
 app.options('*', cors({
   origin: "https://moodgenius-app.vercel.app",
   credentials: true
+=======
+  origin: "*",
+>>>>>>> a9ec731cb110117eb0fb0c0e1cfea806379d13ce
 }));
-
 app.use(express.json());
 
 // Routes
