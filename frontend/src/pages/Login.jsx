@@ -31,7 +31,7 @@ useEffect(() => {
   document.title = "Login - Mood Genius";
   console.log("Login page loaded");
   const fetchData = async () => {    
-  const res = await axios.get('https://moodgenius-backend.vercel.app/api/auth/me');
+  const res = await axios.get('https://mood-detection-mu.vercel.app/api/auth/me');
       if (res.data.success) {
       setGetData(res.data.users);
       console.log(res.data.users);
