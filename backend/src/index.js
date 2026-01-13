@@ -42,5 +42,9 @@ app.get("/test-db", async (req, res) => {
     res.status(500).json({ success: false, error: err.message });
   }
 });
+
+// app.listen(process.env.PORT || 5000, () => {
+//   console.log(`Server running on port ${process.env.PORT || 5000}`);
+// });
 export default app;
 
