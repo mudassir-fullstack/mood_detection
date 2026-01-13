@@ -9,7 +9,7 @@ dotenv.config();
 const app = express();
 
 // Allowed frontend origin
-const allowedOrigin = "https://moodgenius-app.vercel.app";
+const allowedOrigin = "https://mood-detection-3ih9.vercel.app";
 // CORS setup
 app.use(cors({
   origin: allowedOrigin,
