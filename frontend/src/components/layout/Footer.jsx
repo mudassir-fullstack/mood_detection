@@ -10,7 +10,7 @@ const Footer = () => {
             <div className='d-flex align-items-center mb-3'>
               <div>
               <img
-              src='./public/footer.png'
+              src='/footer.png'
               alt='Logo'
                 className='rounded d-flex align-items-center justify-content-center me-2' 
                 style={{
