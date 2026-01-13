@@ -43,7 +43,7 @@ const HomePage = () => {
             </div>
           <div className='col-lg-6 d-flex justify-content-center mb-4 mb-lg-0 order-0 order-lg-1'>
   <img 
-    src="./public/hero.jpeg" 
+    src="/hero.jpeg" 
     alt="Hero" 
     className='img-fluid rounded shadow-sm'
     style={{ maxWidth: "80%", height: "auto" }} 
