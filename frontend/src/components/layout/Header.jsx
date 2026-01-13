@@ -13,7 +13,7 @@ const Header = () => {
           {/* Logo */}
           <a className='navbar-brand d-flex align-items-center' href='#home'>
             <img
-                src="./public/logo.jpeg" 
+                src="/logo.jpeg" 
               alt="Mood Genius Logo"
               className='rounded d-flex align-items-center justify-content-center me-2' 
               style={{
